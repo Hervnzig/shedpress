@@ -1,0 +1,14 @@
+/*************************************************|
+| Styles for the buttons in the framework         |
+*************************************************/
+
+button {
+
+  &:focus {
+    outline: none;
+  }
+
+  &:hover {
+    background: red;
+  }
+}
