@@ -1,6 +1,18 @@
 .full-background {
-  background: url(../../img/large-shed.jpg);
+  position: absolute;
+  z-index: -1;
+  background: url(../../img/mobile-shed.jpg) no-repeat;
   width: 100%;
   height: 100%;
   background-size: cover;
+  background-position: top center;
+
+  @include bp($landscapetablet) {
+    background: url(../../img/large-shed.jpg) no-repeat;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: top center;
+
+  }
 }

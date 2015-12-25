@@ -2,13 +2,21 @@
 | Styles for the buttons in the framework         |
 *************************************************/
 
-button {
+button, .button {
+
+  background: $primary;
+  color: white;
+  border: 0;
+  border-radius: 99px;
+  width: 90px;
+  font-family: "HarmoniaSans", sans-serif;
+  text-transform: lowercase;
 
   &:focus {
     outline: none;
   }
 
   &:hover {
-    background: red;
+    background: darken($primary, 10%);
   }
 }

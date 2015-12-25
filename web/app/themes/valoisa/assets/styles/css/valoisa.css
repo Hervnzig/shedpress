@@ -111,8 +111,12 @@ table {
 /*************************************************|
 | Put your fonts in here                          |
 *************************************************/
+@font-face {
+  font-family: HarmoniaSans;
+  src: url(../../fonts/HarmoniaSans/HarmoniaSansProCyr-Regular.otf); }
+
 html {
-  font-family: "Raleway", sans-serif;
+  font-family: "HarmoniaSans", sans-serif;
   font-size: 14px;
   color: #393939; }
   @media (min-width: 560px) {
@@ -158,11 +162,18 @@ h6 {
 /*************************************************|
 | Styles for the buttons in the framework         |
 *************************************************/
-button:focus {
-  outline: none; }
-
-button:hover {
-  background: red; }
+button, .button {
+  background: #03A9F4;
+  color: white;
+  border: 0;
+  border-radius: 99px;
+  width: 90px;
+  font-family: "HarmoniaSans", sans-serif;
+  text-transform: lowercase; }
+  button:focus, .button:focus {
+    outline: none; }
+  button:hover, .button:hover {
+    background: #0286c2; }
 
 /*************************************************|
 | Input elements                                  |
@@ -425,10 +436,30 @@ input {
     margin: 0 auto; } }
 
 .full-background {
-  background: url(../../img/large-shed.jpg);
+  position: absolute;
+  z-index: -1;
+  background: url(../../img/mobile-shed.jpg) no-repeat;
   width: 100%;
   height: 100%;
-  background-size: cover; }
+  background-size: cover;
+  background-position: top center; }
+  @media (min-width: 960px) {
+    .full-background {
+      background: url(../../img/large-shed.jpg) no-repeat;
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+      background-position: top center; } }
+
+.shed-logo {
+  width: 350px;
+  height: 273px;
+  background: url(../../img/the-shed.png);
+  background-size: cover;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%); }
 
 /*************************************************|
 | Properties for elements, such as text-alignment |
@@ -438,7 +469,7 @@ input {
 | Background properties                           |
 *************************************************/
 .bg-primary {
-  background: #aa88ff; }
+  background: #03A9F4; }
 
 .bg-secondary {
   background: #4a3a9a; }
@@ -463,6 +494,9 @@ input {
 
 .pad-b {
   padding-bottom: 1em; }
+
+.pad-s {
+  padding: 0.5em; }
 
 /*************************************************|
 | Text align properties                           |
