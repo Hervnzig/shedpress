@@ -11,6 +11,11 @@ button, .button {
   width: 90px;
   font-family: "HarmoniaSans", sans-serif;
   text-transform: lowercase;
+  cursor: pointer;
+
+  &.secondary {
+    background: $secondary;
+  }
 
   &:focus {
     outline: none;

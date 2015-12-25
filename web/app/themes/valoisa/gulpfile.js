@@ -24,10 +24,16 @@ gulp.task('browser-sync', function() {
 });
 
 // Lint Task
-gulp.task('lint', function() {
-    return gulp.src('js/*.js')
+gulp.task('scripts', function() {
+    return gulp.src([ 'assets/js/**/*.js', '!assets/js/all.js', '!assets/js/min/valoisa.min.js' ])
         .pipe(jshint())
-        .pipe(jshint.reporter('default'));
+        .pipe(plumber({errorHandler: errorAlert}))
+        .pipe(jshint.reporter('default'))
+        .pipe(concat('all.js'))
+        .pipe(gulp.dest('assets/js'))
+        .pipe(rename('valoisa.min.js'))
+        .pipe(uglify())
+        .pipe(gulp.dest('assets/js/min'));
         //.pipe(notify({message: "Javascript linted and compiled", title: "Compilation Successful"}));
 });
 
@@ -45,26 +51,16 @@ gulp.task('sass', function() {
         //.pipe(notify({message: "Sass compilation complete", title: "Compilation Successful"}));
 });
 
-// Concatenate & Minify JS
-gulp.task('scripts', function() {
-    return gulp.src(['js/*.js', '!js/customizer.js', 'vendor/skrollr/src/skrollr.js'])
-        .pipe(concat('all.js'))
-        .pipe(gulp.dest('dist'))
-        .pipe(rename('all.min.js'))
-        .pipe(uglify())
-        .pipe(gulp.dest('dist'))
-        .pipe(notify({message: "Javascript linted and compiled", title: "Compilation Successful"}))
-});
 
 // Watch Files For Changes
 gulp.task('watch', function() {
-    gulp.watch('dist/all.min.js').on( 'change', browsersync.reload);
-    gulp.watch('assets/js/*.js', ['lint', 'scripts']);
+    gulp.watch('assets/js/min/valoisa.min.js').on( 'change', browsersync.reload);
+    gulp.watch('assets/js/*.js', ['scripts']);
     gulp.watch('assets/styles/scss/**/*.scss', ['sass']).on( 'change', browsersync.stream );
 });
 
 // Default Task
-gulp.task('default', ['lint', 'sass', 'scripts', 'watch', 'browser-sync']);
+gulp.task('default', ['sass', 'scripts', 'watch', 'browser-sync']);
 
 
 function errorAlert(error){

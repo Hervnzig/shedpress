@@ -1,10 +1,8 @@
 .shed-logo {
-  width: 350px;
+  width: 349px;
   height: 273px;
   background: url(../../img/the-shed.png);
   background-size: cover;
-  position: absolute;
+  position: relative;
   top: 50%;
-  left: 50%;
-  transform: translateX(-50%) translateY(-50%);
 }

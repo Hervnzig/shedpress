@@ -45,6 +45,8 @@
 @import "components/container";
 @import "components/full-background";
 @import "components/shed-logo";
+@import "components/rules";
+@import "components/shed-container";
 
 /*************************************************|
 | Properties for elements, such as text-alignment |
@@ -54,3 +56,6 @@
 @import "properties/background";
 @import "properties/padding";
 @import "properties/text-align";
+@import "properties/margins";
+@import "properties/display";
+@import "properties/text-decoration";
