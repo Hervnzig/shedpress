@@ -424,6 +424,12 @@ input {
     width: 80%;
     margin: 0 auto; } }
 
+.full-background {
+  background: url(../../img/large-shed.jpg);
+  width: 100%;
+  height: 100%;
+  background-size: cover; }
+
 /*************************************************|
 | Properties for elements, such as text-alignment |
 | or background colouring.                        |

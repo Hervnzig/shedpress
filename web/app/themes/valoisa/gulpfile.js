@@ -1,7 +1,7 @@
 // Include gulp
 var gulp = require('gulp');
 
-var appUrl = "valoisa.local";
+var appUrl = "shed.app";
 
 // Include Our Plugins
 var jshint = require('gulp-jshint');
