@@ -1,5 +1,5 @@
 set :application, 'valoisapress'
-set :repo_url, 'git@github.com:opr/valoisapress.git'
+set :repo_url, 'git@github.com:opr/shedpress.git'
 
 # Branch options
 # Prompts for the branch name (defaults to current branch)
