@@ -172,7 +172,9 @@ button, .button {
   text-transform: lowercase;
   cursor: pointer; }
   button.secondary, .button.secondary {
-    background: #4a3a9a; }
+    background: #C602F2; }
+    button.secondary:hover, .button.secondary:hover {
+      background: #9d02bf; }
   button:focus, .button:focus {
     outline: none; }
   button:hover, .button:hover {
@@ -190,7 +192,7 @@ input {
 | Transtion classes                               |
 *************************************************/
 .transition {
-  transition: all 0.35s ease-in; }
+  transition: all 0.25s ease-in; }
 
 /*************************************************|
 | Grid                                            |
@@ -463,7 +465,12 @@ input {
   top: 50%; }
 
 .rules {
-  display: none; }
+  display: none;
+  width: 349px; }
+
+.info {
+  display: none;
+  width: 349px; }
 
 .shed-container {
   background-size: cover;
@@ -484,7 +491,7 @@ input {
   background: #03A9F4; }
 
 .bg-secondary {
-  background: #4a3a9a; }
+  background: #C602F2; }
 
 .bg-tertiary {
   background: #9a3a9a; }
